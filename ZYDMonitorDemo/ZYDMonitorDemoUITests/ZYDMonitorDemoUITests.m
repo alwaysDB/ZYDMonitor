@@ -1,18 +1,18 @@
 //
-//  ZYDMonitorUITests.m
-//  ZYDMonitorUITests
+//  ZYDMonitorDemoUITests.m
+//  ZYDMonitorDemoUITests
 //
-//  Created by 朱耀东 on 15/11/17.
+//  Created by 朱耀东 on 15/11/16.
 //  Copyright © 2015年 zyd. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface ZYDMonitorUITests : XCTestCase
+@interface ZYDMonitorDemoUITests : XCTestCase
 
 @end
 
-@implementation ZYDMonitorUITests
+@implementation ZYDMonitorDemoUITests
 
 - (void)setUp {
     [super setUp];

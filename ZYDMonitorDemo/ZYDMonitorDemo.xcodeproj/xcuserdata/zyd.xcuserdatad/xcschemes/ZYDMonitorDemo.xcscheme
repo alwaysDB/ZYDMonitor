@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "164EBF0E1BFA607000CFC15A"
-               BuildableName = "ZYDMonitor.app"
-               BlueprintName = "ZYDMonitor"
-               ReferencedContainer = "container:ZYDMonitor.xcodeproj">
+               BlueprintIdentifier = "16E7BA981BFA651700148E3D"
+               BuildableName = "ZYDMonitorDemo.app"
+               BlueprintName = "ZYDMonitorDemo"
+               ReferencedContainer = "container:ZYDMonitorDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "164EBF271BFA607100CFC15A"
-               BuildableName = "ZYDMonitorTests.xctest"
-               BlueprintName = "ZYDMonitorTests"
-               ReferencedContainer = "container:ZYDMonitor.xcodeproj">
+               BlueprintIdentifier = "16E7BAB11BFA651700148E3D"
+               BuildableName = "ZYDMonitorDemoTests.xctest"
+               BlueprintName = "ZYDMonitorDemoTests"
+               ReferencedContainer = "container:ZYDMonitorDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "164EBF321BFA607100CFC15A"
-               BuildableName = "ZYDMonitorUITests.xctest"
-               BlueprintName = "ZYDMonitorUITests"
-               ReferencedContainer = "container:ZYDMonitor.xcodeproj">
+               BlueprintIdentifier = "16E7BABC1BFA651700148E3D"
+               BuildableName = "ZYDMonitorDemoUITests.xctest"
+               BlueprintName = "ZYDMonitorDemoUITests"
+               ReferencedContainer = "container:ZYDMonitorDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "164EBF0E1BFA607000CFC15A"
-            BuildableName = "ZYDMonitor.app"
-            BlueprintName = "ZYDMonitor"
-            ReferencedContainer = "container:ZYDMonitor.xcodeproj">
+            BlueprintIdentifier = "16E7BA981BFA651700148E3D"
+            BuildableName = "ZYDMonitorDemo.app"
+            BlueprintName = "ZYDMonitorDemo"
+            ReferencedContainer = "container:ZYDMonitorDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "164EBF0E1BFA607000CFC15A"
-            BuildableName = "ZYDMonitor.app"
-            BlueprintName = "ZYDMonitor"
-            ReferencedContainer = "container:ZYDMonitor.xcodeproj">
+            BlueprintIdentifier = "16E7BA981BFA651700148E3D"
+            BuildableName = "ZYDMonitorDemo.app"
+            BlueprintName = "ZYDMonitorDemo"
+            ReferencedContainer = "container:ZYDMonitorDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "164EBF0E1BFA607000CFC15A"
-            BuildableName = "ZYDMonitor.app"
-            BlueprintName = "ZYDMonitor"
-            ReferencedContainer = "container:ZYDMonitor.xcodeproj">
+            BlueprintIdentifier = "16E7BA981BFA651700148E3D"
+            BuildableName = "ZYDMonitorDemo.app"
+            BlueprintName = "ZYDMonitorDemo"
+            ReferencedContainer = "container:ZYDMonitorDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

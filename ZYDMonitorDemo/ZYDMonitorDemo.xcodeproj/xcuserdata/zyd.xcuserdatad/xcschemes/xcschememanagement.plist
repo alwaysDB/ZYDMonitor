@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ZYDMonitor.xcscheme</key>
+		<key>ZYDMonitorDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>164EBF0E1BFA607000CFC15A</key>
+		<key>16E7BA981BFA651700148E3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>164EBF271BFA607100CFC15A</key>
+		<key>16E7BAB11BFA651700148E3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>164EBF321BFA607100CFC15A</key>
+		<key>16E7BABC1BFA651700148E3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
