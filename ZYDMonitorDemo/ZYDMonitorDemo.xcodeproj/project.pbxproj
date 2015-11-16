@@ -15,6 +15,10 @@
 		16E7BAAC1BFA651700148E3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E7BAAA1BFA651700148E3D /* LaunchScreen.storyboard */; };
 		16E7BAB71BFA651700148E3D /* ZYDMonitorDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7BAB61BFA651700148E3D /* ZYDMonitorDemoTests.m */; };
 		16E7BAC21BFA651700148E3D /* ZYDMonitorDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7BAC11BFA651700148E3D /* ZYDMonitorDemoUITests.m */; };
+		16E7BAD61BFA651700148E3D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7BAD51BFA651700148E3D /* NotificationCenter.framework */; };
+		16E7BADA1BFA651700148E3D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7BAD91BFA651700148E3D /* TodayViewController.m */; };
+		16E7BADD1BFA651700148E3D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E7BADB1BFA651700148E3D /* MainInterface.storyboard */; };
+		16E7BAE11BFA651700148E3D /* ZYDMonitor.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16E7BAD31BFA651700148E3D /* ZYDMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +36,28 @@
 			remoteGlobalIDString = 16E7BA981BFA651700148E3D;
 			remoteInfo = ZYDMonitorDemo;
 		};
+		16E7BADF1BFA651700148E3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16E7BA911BFA651700148E3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16E7BAD21BFA651700148E3D;
+			remoteInfo = ZYDMonitor;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		16E7BAE51BFA651700148E3D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				16E7BAE11BFA651700148E3D /* ZYDMonitor.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		16E7BA991BFA651700148E3D /* ZYDMonitorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYDMonitorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +76,14 @@
 		16E7BABD1BFA651700148E3D /* ZYDMonitorDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZYDMonitorDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E7BAC11BFA651700148E3D /* ZYDMonitorDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYDMonitorDemoUITests.m; sourceTree = "<group>"; };
 		16E7BAC31BFA651700148E3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16E7BAD31BFA651700148E3D /* ZYDMonitor.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ZYDMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		16E7BAD51BFA651700148E3D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		16E7BAD81BFA651700148E3D /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		16E7BAD91BFA651700148E3D /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		16E7BADC1BFA651700148E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		16E7BADE1BFA651700148E3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16E7BAE61BFA651700148E3D /* ZYDMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ZYDMonitor.entitlements; sourceTree = "<group>"; };
+		16E7BAE71BFA651700148E3D /* ZYDMonitorDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ZYDMonitorDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +108,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		16E7BAD01BFA651700148E3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16E7BAD61BFA651700148E3D /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +125,8 @@
 				16E7BA9B1BFA651700148E3D /* ZYDMonitorDemo */,
 				16E7BAB51BFA651700148E3D /* ZYDMonitorDemoTests */,
 				16E7BAC01BFA651700148E3D /* ZYDMonitorDemoUITests */,
+				16E7BAD71BFA651700148E3D /* ZYDMonitor */,
+				16E7BAD41BFA651700148E3D /* Frameworks */,
 				16E7BA9A1BFA651700148E3D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +137,7 @@
 				16E7BA991BFA651700148E3D /* ZYDMonitorDemo.app */,
 				16E7BAB21BFA651700148E3D /* ZYDMonitorDemoTests.xctest */,
 				16E7BABD1BFA651700148E3D /* ZYDMonitorDemoUITests.xctest */,
+				16E7BAD31BFA651700148E3D /* ZYDMonitor.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +145,7 @@
 		16E7BA9B1BFA651700148E3D /* ZYDMonitorDemo */ = {
 			isa = PBXGroup;
 			children = (
+				16E7BAE71BFA651700148E3D /* ZYDMonitorDemo.entitlements */,
 				16E7BA9F1BFA651700148E3D /* AppDelegate.h */,
 				16E7BAA01BFA651700148E3D /* AppDelegate.m */,
 				16E7BAA21BFA651700148E3D /* ViewController.h */,
@@ -140,6 +185,26 @@
 			path = ZYDMonitorDemoUITests;
 			sourceTree = "<group>";
 		};
+		16E7BAD41BFA651700148E3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16E7BAD51BFA651700148E3D /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16E7BAD71BFA651700148E3D /* ZYDMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				16E7BAE61BFA651700148E3D /* ZYDMonitor.entitlements */,
+				16E7BAD81BFA651700148E3D /* TodayViewController.h */,
+				16E7BAD91BFA651700148E3D /* TodayViewController.m */,
+				16E7BADB1BFA651700148E3D /* MainInterface.storyboard */,
+				16E7BADE1BFA651700148E3D /* Info.plist */,
+			);
+			path = ZYDMonitor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,10 +215,12 @@
 				16E7BA951BFA651700148E3D /* Sources */,
 				16E7BA961BFA651700148E3D /* Frameworks */,
 				16E7BA971BFA651700148E3D /* Resources */,
+				16E7BAE51BFA651700148E3D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				16E7BAE01BFA651700148E3D /* PBXTargetDependency */,
 			);
 			name = ZYDMonitorDemo;
 			productName = ZYDMonitorDemo;
@@ -196,6 +263,23 @@
 			productReference = 16E7BABD1BFA651700148E3D /* ZYDMonitorDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		16E7BAD21BFA651700148E3D /* ZYDMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16E7BAE21BFA651700148E3D /* Build configuration list for PBXNativeTarget "ZYDMonitor" */;
+			buildPhases = (
+				16E7BACF1BFA651700148E3D /* Sources */,
+				16E7BAD01BFA651700148E3D /* Frameworks */,
+				16E7BAD11BFA651700148E3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZYDMonitor;
+			productName = ZYDMonitor;
+			productReference = 16E7BAD31BFA651700148E3D /* ZYDMonitor.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -208,6 +292,11 @@
 					16E7BA981BFA651700148E3D = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = GZ9LDY5863;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					16E7BAB11BFA651700148E3D = {
 						CreatedOnToolsVersion = 7.1;
@@ -216,6 +305,15 @@
 					16E7BABC1BFA651700148E3D = {
 						CreatedOnToolsVersion = 7.1;
 						TestTargetID = 16E7BA981BFA651700148E3D;
+					};
+					16E7BAD21BFA651700148E3D = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = GZ9LDY5863;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -235,6 +333,7 @@
 				16E7BA981BFA651700148E3D /* ZYDMonitorDemo */,
 				16E7BAB11BFA651700148E3D /* ZYDMonitorDemoTests */,
 				16E7BABC1BFA651700148E3D /* ZYDMonitorDemoUITests */,
+				16E7BAD21BFA651700148E3D /* ZYDMonitor */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +360,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16E7BAD11BFA651700148E3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16E7BADD1BFA651700148E3D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +400,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		16E7BACF1BFA651700148E3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16E7BADA1BFA651700148E3D /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -305,6 +420,11 @@
 			isa = PBXTargetDependency;
 			target = 16E7BA981BFA651700148E3D /* ZYDMonitorDemo */;
 			targetProxy = 16E7BABE1BFA651700148E3D /* PBXContainerItemProxy */;
+		};
+		16E7BAE01BFA651700148E3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16E7BAD21BFA651700148E3D /* ZYDMonitor */;
+			targetProxy = 16E7BADF1BFA651700148E3D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -323,6 +443,14 @@
 				16E7BAAB1BFA651700148E3D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		16E7BADB1BFA651700148E3D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16E7BADC1BFA651700148E3D /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -412,11 +540,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ZYDMonitorDemo/ZYDMonitorDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZYDMonitorDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,11 +555,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ZYDMonitorDemo/ZYDMonitorDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZYDMonitorDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -480,6 +614,36 @@
 			};
 			name = Release;
 		};
+		16E7BAE31BFA651700148E3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ZYDMonitor/ZYDMonitor.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = ZYDMonitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo.ZYDMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		16E7BAE41BFA651700148E3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ZYDMonitor/ZYDMonitor.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = ZYDMonitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo.ZYDMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -513,6 +677,14 @@
 			buildConfigurations = (
 				16E7BACD1BFA651700148E3D /* Debug */,
 				16E7BACE1BFA651700148E3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		16E7BAE21BFA651700148E3D /* Build configuration list for PBXNativeTarget "ZYDMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16E7BAE31BFA651700148E3D /* Debug */,
+				16E7BAE41BFA651700148E3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

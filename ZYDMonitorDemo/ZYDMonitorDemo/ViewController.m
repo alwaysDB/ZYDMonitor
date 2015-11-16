@@ -34,6 +34,8 @@
     double preDisk = availableDiskSize / totalDiskSize * 100;
     
     NSLog(@"\n 空闲内存:%.2f\n 已占用内存:%.2f%% \n 可用磁盘容量:%.2f \n 可用磁盘百分比:%.2f%%", availableMemory, preMemory, availableDiskSize, preDisk);
+    
+    [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithFormat:@"%f", availableMemory] forKey:@"availableMemory"];
 }
 
 // 获取当前设备可用内存(单位：MB）
