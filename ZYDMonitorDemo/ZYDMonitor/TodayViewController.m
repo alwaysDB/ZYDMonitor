@@ -17,6 +17,7 @@
 #include <sys/socket.h>
 #include <net/if.h>
 #import "WMGaugeView.h"
+#import "Reachability.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UILabel *menoryLab;
@@ -31,6 +32,10 @@
 @property (assign, nonatomic) float preWWAN_R;
 
 @property (assign, nonatomic) float preWWAN_S;
+
+@property (assign, nonatomic) float preWifi_R;
+
+@property (assign, nonatomic) float preWifi_S;
 
 @end
 
@@ -78,31 +83,44 @@
     
     // 内存、存储
     float availableMemory = [self availableMemory];
-    self.menoryLab.text = [NSString stringWithFormat:@"%.0fMB", availableMemory];
+    self.menoryLab.text = [NSString stringWithFormat:@"%.0f MB", availableMemory];
     
     float allMemory = [self getTotalMemorySize];
     float memoryPre = (1-availableMemory/allMemory)*100;
-    self.memoryPreLab.text = [NSString stringWithFormat:@"%.2f%%", memoryPre];
+    self.memoryPreLab.text = [NSString stringWithFormat:@"%.2f %%", memoryPre];
     self.guanGeView.value = memoryPre;
     
     float availableDiskSize = [self getAvailableDiskSize];
-    self.diskLab.text = [NSString stringWithFormat:@"%.0fMB", availableDiskSize];
+    self.diskLab.text = [NSString stringWithFormat:@"%.2f GB", availableDiskSize / 1024.0];
     
     // 上行、下行流量
-    float wwanS_preSecond = [[self getDataCounters][2] floatValue] - self.preWWAN_S;
-    float wwanR_preSecond = [[self getDataCounters][3] floatValue] - self.preWWAN_R;
-    //    NSLog(@"S:%.2fKB-R:%.2fKB", wwanS_preSecond,wwanR_preSecond);
-    self.topLiuLiang.text = [NSString stringWithFormat:@"%.0fKB/s", wwanS_preSecond];
-    self.downLiuLiang.text = [NSString stringWithFormat:@"%.0fKB/s", wwanR_preSecond];
+    Reachability *reachability = [Reachability reachabilityWithHostName:@"hha"];
+    if (reachability.currentReachabilityStatus == ReachableViaWiFi) {
+        float wifiS_preSecond = [[self getDataCounters][0] floatValue] - self.preWifi_S;
+        float wifiR_preSecond = [[self getDataCounters][1] floatValue] - self.preWifi_R;
+        self.topLiuLiang.text = [NSString stringWithFormat:@"%.0f KB/s", wifiS_preSecond];
+        self.downLiuLiang.text = [NSString stringWithFormat:@"%.0f KB/s", wifiR_preSecond];
+    }else if(reachability.currentReachabilityStatus == ReachableViaWWAN) {
+        float wwanS_preSecond = [[self getDataCounters][2] floatValue] - self.preWWAN_S;
+        float wwanR_preSecond = [[self getDataCounters][3] floatValue] - self.preWWAN_R;
+        self.topLiuLiang.text = [NSString stringWithFormat:@"%.0f KB/s", wwanS_preSecond];
+        self.downLiuLiang.text = [NSString stringWithFormat:@"%.0f KB/s", wwanR_preSecond];
+    }else {
+    }
     
     NSNumber *wifiSendNumber = [self getDataCounters][0];
     float wifiS = [wifiSendNumber floatValue];
+    self.preWifi_S = wifiS;
+    
     NSNumber *wifiReceived = [self getDataCounters][1];
     float wifiR = [wifiReceived floatValue];
+    self.preWifi_R = wifiR;
+    
     NSNumber *wwanSendNumber = [self getDataCounters][2];
     float wwanS = [wwanSendNumber floatValue];
-    NSNumber *wwanReceived = [self getDataCounters][3];
     self.preWWAN_S = wwanS;
+    
+    NSNumber *wwanReceived = [self getDataCounters][3];
     float wwanR = [wwanReceived floatValue];
     self.preWWAN_R = wwanR;
     

@@ -20,6 +20,7 @@
 		16E7BADD1BFA651700148E3D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E7BADB1BFA651700148E3D /* MainInterface.storyboard */; };
 		16E7BAE11BFA651700148E3D /* ZYDMonitor.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16E7BAD31BFA651700148E3D /* ZYDMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		16E7BAEA1BFB436D00148E3D /* WMGaugeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7BAE91BFB436D00148E3D /* WMGaugeView.m */; };
+		16E7BAED1BFB466C00148E3D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7BAEC1BFB466C00148E3D /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		16E7BAE71BFA651700148E3D /* ZYDMonitorDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ZYDMonitorDemo.entitlements; sourceTree = "<group>"; };
 		16E7BAE81BFB436D00148E3D /* WMGaugeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMGaugeView.h; sourceTree = "<group>"; };
 		16E7BAE91BFB436D00148E3D /* WMGaugeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMGaugeView.m; sourceTree = "<group>"; };
+		16E7BAEB1BFB466C00148E3D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		16E7BAEC1BFB466C00148E3D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				16E7BADB1BFA651700148E3D /* MainInterface.storyboard */,
 				16E7BAE81BFB436D00148E3D /* WMGaugeView.h */,
 				16E7BAE91BFB436D00148E3D /* WMGaugeView.m */,
+				16E7BAEB1BFB466C00148E3D /* Reachability.h */,
+				16E7BAEC1BFB466C00148E3D /* Reachability.m */,
 				16E7BADE1BFA651700148E3D /* Info.plist */,
 			);
 			path = ZYDMonitor;
@@ -410,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E7BAEA1BFB436D00148E3D /* WMGaugeView.m in Sources */,
+				16E7BAED1BFB466C00148E3D /* Reachability.m in Sources */,
 				16E7BADA1BFA651700148E3D /* TodayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
