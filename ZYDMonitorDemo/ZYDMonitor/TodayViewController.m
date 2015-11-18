@@ -46,17 +46,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    //    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.gsMonitorDemo"];
-    //    float availableMemory = [userDefaults floatForKey:@"group.availableMemory"];
+
+    self.flag = NO;
     
     self.preferredContentSize = CGSizeMake(320, 150);
     
-    self.flag = NO;
-    
     [self currentLiuLiang];
     
+    [self setAppearance];
+    
+    [self refreshV];
+    
+    //    self.guanGeView.value = 0.0;
+    
+    float availableMemory = [self availableMemory];
+    self.menoryLab.text = [NSString stringWithFormat:@"%.0f MB", availableMemory];
+    
+    float allMemory = [self getTotalMemorySize];
+    float memoryPre = (1-availableMemory/allMemory)*100;
+    
+    self.guanGeView.value = memoryPre;
+    self.flag = YES;
+    
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
+//    self.timer = timer;
+
+    CADisplayLink* link = [CADisplayLink displayLinkWithTarget:self selector:@selector(refreshV)];
+    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    link.frameInterval = 60;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
+//    self.timer = timer;
+}
+
+//- (void)dealloc {
+//    [self.timer invalidate];
+//    self.timer = nil;
+//}
+
+- (void)setAppearance {
     self.guanGeView.maxValue = 100.0;
     self.guanGeView.scaleDivisions = 10;
     self.guanGeView.scaleSubdivisions = 5;
@@ -75,33 +107,6 @@
     self.guanGeView.needleHeight = 0.4;
     self.guanGeView.needleScrewStyle = WMGaugeViewNeedleScrewStylePlain;
     self.guanGeView.needleScrewRadius = 0.05;
-    
-    [self refreshV];
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    //    self.guanGeView.value = 0.0;
-    
-    float availableMemory = [self availableMemory];
-    self.menoryLab.text = [NSString stringWithFormat:@"%.0f MB", availableMemory];
-    
-    float allMemory = [self getTotalMemorySize];
-    float memoryPre = (1-availableMemory/allMemory)*100;
-    
-    self.guanGeView.value = memoryPre;
-    self.flag = YES;
-    
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
-    self.timer = timer;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.timer invalidate];
-    self.timer = nil;
 }
 
 - (void)refreshV {
@@ -305,11 +310,6 @@
     
     return tot_cpu;
 }
-
-//- (void)dealloc {
-//    [self.timer invalidate];
-//    self.timer = nil;
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
