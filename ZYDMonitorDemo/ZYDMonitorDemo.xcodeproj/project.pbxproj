@@ -556,8 +556,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZYDMonitorDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -571,8 +572,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZYDMonitorDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -633,8 +635,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZYDMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo.ZYDMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo1.ZYDMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -648,8 +651,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZYDMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo.ZYDMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyd.ZYDMonitorDemo1.ZYDMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -675,6 +679,7 @@
 				16E7BAC81BFA651700148E3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16E7BAC91BFA651700148E3D /* Build configuration list for PBXNativeTarget "ZYDMonitorDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -683,6 +688,7 @@
 				16E7BACB1BFA651700148E3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16E7BACC1BFA651700148E3D /* Build configuration list for PBXNativeTarget "ZYDMonitorDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -691,6 +697,7 @@
 				16E7BACE1BFA651700148E3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16E7BAE21BFA651700148E3D /* Build configuration list for PBXNativeTarget "ZYDMonitor" */ = {
 			isa = XCConfigurationList;
@@ -699,6 +706,7 @@
 				16E7BAE41BFA651700148E3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

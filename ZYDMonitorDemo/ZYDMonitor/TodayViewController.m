@@ -37,6 +37,9 @@
 
 @property (assign, nonatomic) float preWifi_S;
 
+@property (strong, nonatomic) NSTimer *timer;
+
+@property (assign, nonatomic) BOOL flag;
 @end
 
 @implementation TodayViewController
@@ -50,8 +53,9 @@
     
     self.preferredContentSize = CGSizeMake(320, 150);
     
-    self.topLiuLiang.text = @"正在计算...";
-    self.downLiuLiang.text = @"正在计算...";
+    self.flag = NO;
+    
+    [self currentLiuLiang];
     
     self.guanGeView.maxValue = 100.0;
     self.guanGeView.scaleDivisions = 10;
@@ -74,7 +78,30 @@
     
     [self refreshV];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //    self.guanGeView.value = 0.0;
+    
+    float availableMemory = [self availableMemory];
+    self.menoryLab.text = [NSString stringWithFormat:@"%.0f MB", availableMemory];
+    
+    float allMemory = [self getTotalMemorySize];
+    float memoryPre = (1-availableMemory/allMemory)*100;
+    
+    self.guanGeView.value = memoryPre;
+    self.flag = YES;
+    
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
+    self.timer = timer;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)refreshV {
@@ -88,7 +115,9 @@
     float allMemory = [self getTotalMemorySize];
     float memoryPre = (1-availableMemory/allMemory)*100;
     self.memoryPreLab.text = [NSString stringWithFormat:@"%.2f %%", memoryPre];
-    self.guanGeView.value = memoryPre;
+    if (self.flag) {
+        self.guanGeView.value = memoryPre;
+    }
     
     float availableDiskSize = [self getAvailableDiskSize];
     self.diskLab.text = [NSString stringWithFormat:@"%.2f GB", availableDiskSize / 1024.0];
@@ -108,6 +137,13 @@
     }else {
     }
     
+    [self currentLiuLiang];
+    
+    float cpuUsage = [self cpu_usage];
+    self.cpuLab.text = [NSString stringWithFormat:@"%.1f%%", cpuUsage];
+}
+
+- (void)currentLiuLiang {
     NSNumber *wifiSendNumber = [self getDataCounters][0];
     float wifiS = [wifiSendNumber floatValue];
     self.preWifi_S = wifiS;
@@ -123,9 +159,6 @@
     NSNumber *wwanReceived = [self getDataCounters][3];
     float wwanR = [wwanReceived floatValue];
     self.preWWAN_R = wwanR;
-    
-    float cpuUsage = [self cpu_usage];
-    self.cpuLab.text = [NSString stringWithFormat:@"%.1f%%", cpuUsage];
 }
 
 // 获取当前设备可用内存(单位：MB）
@@ -272,6 +305,11 @@
     
     return tot_cpu;
 }
+
+//- (void)dealloc {
+//    [self.timer invalidate];
+//    self.timer = nil;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
