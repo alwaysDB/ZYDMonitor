@@ -46,7 +46,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.flag = NO;
     
     self.preferredContentSize = CGSizeMake(320, 150);
@@ -68,9 +68,9 @@
     self.guanGeView.value = memoryPre;
     self.flag = YES;
     
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
-//    self.timer = timer;
-
+    //    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
+    //    self.timer = timer;
+    
     CADisplayLink* link = [CADisplayLink displayLinkWithTarget:self selector:@selector(refreshV)];
     [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     link.frameInterval = 60;
@@ -79,8 +79,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
-//    self.timer = timer;
+    //    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
+    //    self.timer = timer;
 }
 
 //- (void)dealloc {
