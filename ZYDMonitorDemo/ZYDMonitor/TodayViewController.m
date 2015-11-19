@@ -148,6 +148,7 @@
     self.cpuLab.text = [NSString stringWithFormat:@"%.1f%%", cpuUsage];
 }
 
+// 赋值当前流量
 - (void)currentLiuLiang {
     NSNumber *wifiSendNumber = [self getDataCounters][0];
     float wifiS = [wifiSendNumber floatValue];
