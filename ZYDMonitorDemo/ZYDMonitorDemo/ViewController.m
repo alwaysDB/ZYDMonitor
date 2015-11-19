@@ -20,6 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"show"]];
+    imageView.frame = self.view.frame;
+    [self.view addSubview:imageView];
     // Do any additional setup after loading the view, typically from a nib.
     
 //    // 空闲内存
