@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16CD88EF1C5657140057213E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CD88EE1C5657140057213E /* UIView+Category.m */; };
 		16E7BA9E1BFA651700148E3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7BA9D1BFA651700148E3D /* main.m */; };
 		16E7BAA11BFA651700148E3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7BAA01BFA651700148E3D /* AppDelegate.m */; };
 		16E7BAA41BFA651700148E3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E7BAA31BFA651700148E3D /* ViewController.m */; };
@@ -62,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		16CD88ED1C5657140057213E /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
+		16CD88EE1C5657140057213E /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		16E7BA991BFA651700148E3D /* ZYDMonitorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYDMonitorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E7BA9D1BFA651700148E3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16E7BA9F1BFA651700148E3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 		16E7BA9B1BFA651700148E3D /* ZYDMonitorDemo */ = {
 			isa = PBXGroup;
 			children = (
+				16CD88ED1C5657140057213E /* UIView+Category.h */,
+				16CD88EE1C5657140057213E /* UIView+Category.m */,
 				16E7BAE71BFA651700148E3D /* ZYDMonitorDemo.entitlements */,
 				16E7BA9F1BFA651700148E3D /* AppDelegate.h */,
 				16E7BAA01BFA651700148E3D /* AppDelegate.m */,
@@ -390,6 +395,7 @@
 			files = (
 				16E7BAA41BFA651700148E3D /* ViewController.m in Sources */,
 				16E7BAA11BFA651700148E3D /* AppDelegate.m in Sources */,
+				16CD88EF1C5657140057213E /* UIView+Category.m in Sources */,
 				16E7BA9E1BFA651700148E3D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,7 +39,11 @@
 
 @property (strong, nonatomic) NSTimer *timer;
 
-@property (assign, nonatomic) BOOL flag;
+@property (assign, nonatomic) int preRef;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *conR;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *conRR;
 @end
 
 @implementation TodayViewController
@@ -47,7 +51,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.flag = NO;
+    
+    CGFloat SW = [UIScreen mainScreen].bounds.size.width;
+    
+    if (SW == 320) {
+        self.conR.constant = -10;
+    }else if (SW == 375) {
+        self.conRR.constant = 25;
+        self.conR.constant = 10;
+    }else if (SW == 414) {
+        self.conRR.constant = 45;
+        self.conR.constant = 20;
+    }
+    
+//    self.flag = NO;
     
     self.preferredContentSize = CGSizeMake(320, 150);
     
@@ -66,7 +83,7 @@
     float memoryPre = (1-availableMemory/allMemory)*100;
     
     self.guanGeView.value = memoryPre;
-    self.flag = YES;
+//    self.flag = YES;
     
         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refreshV) userInfo:nil repeats:YES];
         self.timer = timer;
@@ -83,9 +100,19 @@
     //    self.timer = timer;
 }
 
-- (void)dealloc {
+- (void)viewWillDisappear:(BOOL)animated {
+    NSLog(@"disOver");
     [self.timer invalidate];
     self.timer = nil;
+    [super viewWillDisappear:animated];
+}
+
+- (void)dealloc {
+    NSLog(@"ove");
+    if (self.timer.isValid) {
+        [self.timer invalidate];
+        self.timer = nil;        
+    }
 }
 
 - (void)setAppearance {
@@ -120,9 +147,14 @@
     float allMemory = [self getTotalMemorySize];
     float memoryPre = (1-availableMemory/allMemory)*100;
     self.memoryPreLab.text = [NSString stringWithFormat:@"%.2f %%", memoryPre];
-    if (self.flag) {
+    if (self.preRef % 2 == 0) {
+        NSLog(@"%f", memoryPre);
         self.guanGeView.value = memoryPre;
+        if (self.preRef == 100) {
+            self.preRef = 0;
+        }
     }
+    self.preRef ++;
     
     float availableDiskSize = [self getAvailableDiskSize];
     self.diskLab.text = [NSString stringWithFormat:@"%.2f GB", availableDiskSize / 1024.0];

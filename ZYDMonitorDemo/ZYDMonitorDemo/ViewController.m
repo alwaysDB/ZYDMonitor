@@ -12,18 +12,55 @@
 #include <sys/param.h>
 #include <sys/mount.h>
 
+#import "UIView+Category.h"
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+- (void)snowWithPoint:(CGPoint)point {
+    UIImageView *snowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"snow"]];
+    snowView.center = point;
+    [self.view addSubview:snowView];
+    float randomY = (arc4random() % 300) + 100;
+    float randomX = (arc4random() % 40) + 40;
+    
+    [UIView animateWithDuration:1.8 animations:^{
+        snowView.y += randomY;
+        snowView.x -= randomX;
+        snowView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [snowView removeFromSuperview];
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = touches.anyObject;
+    CGPoint location = [touch locationInView:touch.view];
+        
+    [self snowWithPoint:location];
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = touches.anyObject;
+    
+    CGPoint point = [touch locationInView:self.view];
+    
+    [self snowWithPoint:point];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"show"]];
-    imageView.frame = self.view.frame;
-    [self.view addSubview:imageView];
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"show"]];
+//    imageView.frame = self.view.frame;
+//    [self.view addSubview:imageView];
     // Do any additional setup after loading the view, typically from a nib.
     
 //    // 空闲内存
